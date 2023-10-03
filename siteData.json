@@ -137,6 +137,7 @@
     },
     {
       "src": "team/changruhenryqian.md",
+      "title": "Changru's Project Portfolio Page",
       "headings": {
         "class-manager-2023": "Class Manager 2023",
         "summary-of-contributions": "Summary of Contributions",
@@ -165,7 +166,7 @@
     },
     {
       "src": "team/lwz19.md",
-      "title": "Liang Wenzhong's Project Portfolio Page",
+      "title": "Wen Zhong's Project Portfolio Page",
       "headings": {
         "project-classmanager-2023": "Project: ClassManager-2023"
       },
@@ -173,6 +174,7 @@
     },
     {
       "src": "team/ngeeyonglim.md",
+      "title": "Ngee Yong's Project Portfolio Page",
       "headings": {
         "class-manager-2023": "Class Manager 2023",
         "summary-of-contributions": "Summary of Contributions",
@@ -185,6 +187,7 @@
     },
     {
       "src": "team/yeobohshin.md",
+      "title": "Boh Shin's Project Portfolio Page",
       "headings": {
         "class-manager-2023": "Class Manager 2023",
         "summary-of-contributions": "Summary of Contributions",
