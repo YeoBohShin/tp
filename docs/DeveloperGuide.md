@@ -4,7 +4,7 @@
   pageNav: 3
 ---
 
-# AB-3 Developer Guide
+# CM-23 Developer Guide
 
 <!-- * Table of Contents -->
 <page-nav-print />
@@ -269,42 +269,66 @@ _{Explain here how the data archiving feature will be implemented}_
 
 **Target user profile**:
 
-* has a need to manage a significant number of contacts
+* CS2103T Teaching Assistants
+* has a need to manage student information across different classes
 * prefer desktop apps over other types
 * can type fast
 * prefers typing to mouse interactions
 * is reasonably comfortable using CLI apps
 
-**Value proposition**: manage contacts faster than a typical mouse/GUI driven app
+**Value proposition**: 
 
+* provide fast access to student’s contact information
+* provide easy ways to compare and visualise student's grades across classes
+* optimised for users who prefer CLI
 
 ### User stories
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                 | So that I can…​                                                        |
-|----------|--------------------------------------------|------------------------------|------------------------------------------------------------------------|
-| `* * *`  | new user                                   | see usage instructions       | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person             |                                                                        |
-| `* * *`  | user                                       | delete a person              | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name        | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name         | locate a person easily                                                 |
 
-*{More to be added}*
+| Priority | As a …​  | I want to …​                                                | So that I can…​                                                         |
+|----------|----------|-------------------------------------------------------------|-------------------------------------------------------------------------|
+| `* * *`  | TA       | manually enter the details of students into my address book | track the information                                                   |
+| `* * *`  | TA       | be able to delete students from the class                   | manage students who drop out                                            |
+| `* * *`  | TA       | edit the contact information of students                    | maintain the correct information if it changes                          |
+| `* *`    | TA       | keep track of the attendance percentage of each student     | use it for their participation grade                                    |
+| `* *`    | TA       | be able to add the grades of each student in each tutorial  | use it to view students that need help                                  |
+| `*`      | TA       | be able to keep records of my students in past semesters    | refer to the history of student performance                             |
+| `*`      | TA       | add comments to specific students                           | attach additional information to them                                   |
+| `* * *`  | TA       | tag students with certain labels                            | filter and search more conveniently                                     |
+| `* * *`  | TA       | lookup all students in a particular tutorial group          | obtain their contact information                                        |
+| `* *`    | TA       | search particular students across different tutorial groups | contact them easily                                                     |
+| `*`      | TA       | know the students I searched recently                       | minimize repeated searches                                              |
+| `* *`    | TA       | filter students by tags/labels                              | categorize and organize students                                        |
+| `* *`    | TA       | filter students by their year of study                      | gain a better understanding of the whole tutorial                       |
+| `*`      | TA       | have a composite filter for tutorial group attendance       | look up the attendance of a particular tutorial group on a certain week |
+| `*`      | TA       | randomly select a specific number of students               | use as a feature during teaching                                        |
+| `* *`    | TA       | sort students by coding experience                          | group students with similar experience levels                           |
+| `* *`    | TA       | sort students based on their individual score marks         | understand the performance of the whole class                           |
+| `* *`    | TA       | sort students by alphabetical order                         | compare to the attendance sheet                                         |
+| `* *`    | TA       | sort students by their overall grades                       | identify students falling behind in my class                            |
+| `* `     | TA       | customise my GUI                                            | use a theme that suits my desktop theme                                 |
+| `* `     | TA       | enable dark mode for my device                              | use it at night                                                         |
+| `* `     | TA       | choose different layouts                                    | select a comfortable layout                                             |
+| `* *`    | TA       | have keyboard shortcuts for commonly used features          | save time and fit my habit                                              |
+| `* *`    | TA       | customise commands                                          | save time and fit my habit                                              |
+| `* * *`  | TA       | export and import app’s data                                | work on different devices                                               |
+| `* * *`  | TA       | save queries and searches to the application                | not lose progress                                                       |
+| `* * *`  | new user | see usage instructions                                      | refer to instructions when I forget how to use the App                  |
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is the `ClassManager` and the **Actor** is the `user`, unless specified otherwise)
 
-**Use case: Delete a person**
+**Use case: Delete a student**
 
 **MSS**
 
-1.  User requests to list persons
-2.  AddressBook shows a list of persons
-3.  User requests to delete a specific person in the list
-4.  AddressBook deletes the person
+1.  User requests to list students
+2.  ClassManager shows a list of students
+3.  User requests to delete a specific student in the list
+4.  ClassManager deletes the student
 
     Use case ends.
 
@@ -314,11 +338,99 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
   Use case ends.
 
-* 3a. The given index is invalid.
+* 3a. The given student number is invalid.
 
-    * 3a1. AddressBook shows an error message.
+    * 3a1. ClassManager shows an error message.
 
       Use case resumes at step 2.
+
+* 3b. The given student number does not exist in the list.
+
+    * 3b1. ClassManager shows an error message.
+
+      Use case resumes at step 2.
+
+**Use case: Tag a student with a label**
+
+**MSS**
+
+1.  User requests to list students
+2.  ClassManager shows a list of students
+3.  User requests to tag a specific student in the list
+4.  ClassManager tags the student
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. The list is empty.
+
+  Use case ends.
+
+* 3a. The given student number is invalid.
+
+    * 3a1. ClassManager shows an error message.
+
+      Use case resumes at step 2.
+  
+* 3b. The student already has the given tag.
+
+    * 3b1. ClassManager shows an error message.
+
+      Use case resumes at step 2.
+
+**Use case: Tag a student with a label**
+
+**MSS**
+
+1.  User requests to list students
+2.  ClassManager shows a list of students
+3.  User requests to tag a specific student in the list
+4.  ClassManager tags the student
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. The list is empty.
+
+  Use case ends.
+
+* 3a. The given student number is invalid.
+
+    * 3a1. ClassManager shows an error message.
+
+      Use case resumes at step 2.
+
+* 3b. The student already has the given tag.
+
+    * 3b1. ClassManager shows an error message.
+
+      Use case resumes at step 2.
+
+**Use case: Loading a saved file**
+
+**MSS**
+
+1.  User copies saved JSON file to data folder
+2.  User requests to load JSON file
+3.  ClassManager reads and loads the JSON file
+4.  ClassManager updates the app to show the new data
+
+    Use case ends.
+
+**Extensions**
+
+* 3a. The JSON file cannot be found 
+  * 3a1. ClassManager shows an error message.
+
+    Use case resumes at step 2.
+
+* 4a. The JSON file data is invalid.
+
+    * 4a1. ClassManager shows an error message.
+
+      Use case resumes at step 3.
 
 *{More to be added}*
 
@@ -327,13 +439,16 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
 2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
-
-*{More to be added}*
+4.  Application should be secure (with password) as sensitive information is stored
+5.  Application needs to have proper documentation and user guide so that users can understand how to use the application
 
 ### Glossary
 
 * **Mainstream OS**: Windows, Linux, Unix, OS-X
-* **Private contact detail**: A contact detail that is not meant to be shared with others
+* **Student Number**: Matriculation number of NUS student
+* **Email**: NUS email address (eXXXXXXX@u.nus.edu)
+* **CLI**: Command Line Interface
+* **GUI**: Graphical User Interface
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -371,16 +486,14 @@ testers are expected to do more *exploratory* testing.
 
    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
 
-   1. Test case: `delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+   1. Test case: `delete STUDENT_NUMBER`<br>
+      Expected: The student with STUDENT_NUMBER is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
 
-   1. Test case: `delete 0`<br>
+   1. Test case: `delete vnqvbr145oqrq1924`<br>
       Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
 
-   1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
+   1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is an invalid student number)<br>
       Expected: Similar to previous.
-
-1. _{ more test cases …​ }_
 
 ### Saving data
 

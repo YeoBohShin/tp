@@ -5,6 +5,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TAGS;
 
 import java.util.Set;
 
@@ -57,6 +58,20 @@ public class PersonUtil {
                 tags.forEach(s -> sb.append(PREFIX_TAG).append(s.tagName).append(" "));
             }
         }
+        return sb.toString();
+    }
+    /**
+     * Returns the tag command string for the given {@code person}'s details.
+     */
+    public static String getTagDetails(Person person) {
+        StringBuilder sb = new StringBuilder();
+        Set<Tag> tags = person.getTags();
+        if (tags.isEmpty()) {
+            sb.append(PREFIX_TAGS);
+        } else {
+            tags.forEach(s -> sb.append(PREFIX_TAGS).append(" ").append(s.tagName).append(" "));
+        }
+
         return sb.toString();
     }
 }
