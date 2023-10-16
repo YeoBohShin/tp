@@ -40,7 +40,7 @@
       "src": "DeveloperGuide.md",
       "title": "Developer Guide",
       "headings": {
-        "cm-23-developer-guide": "CM-23 Developer Guide",
+        "class-manager-2023-developer-guide": "Class Manager 2023 Developer Guide",
         "acknowledgements": "Acknowledgements",
         "setting-up-getting-started": "Setting up, getting started",
         "design": "Design",
@@ -62,7 +62,7 @@
         "glossary": "Glossary",
         "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
         "launch-and-shutdown": "Launch and shutdown",
-        "deleting-a-person": "Deleting a person",
+        "deleting-a-student": "Deleting a student",
         "saving-data": "Saving data"
       },
       "headingKeywords": {}
@@ -107,13 +107,13 @@
       "src": "UserGuide.md",
       "title": "User Guide",
       "headings": {
-        "cm-23-user-guide": "CM-23 User Guide",
+        "class-manager-2023-user-guide": "Class Manager 2023 User Guide",
         "quick-start": "Quick start",
         "features": "Features",
         "viewing-help-help": "Viewing help : help",
-        "adding-a-person-add": "Adding a person: add",
+        "adding-a-student-add": "Adding a student: add",
         "listing-all-student-details-list": "Listing all student details : list",
-        "editing-a-person-edit": "Editing a person : edit",
+        "editing-a-student-edit": "Editing a student : edit",
         "tagging-a-student-tag": "Tagging a student: tag",
         "lookup-students-lookup": "Lookup students: lookup",
         "deleting-a-student-delete": "Deleting a student : delete",
@@ -133,7 +133,7 @@
       "src": "index.md",
       "title": "",
       "headings": {
-        "classmanager-2023": "ClassManager-2023"
+        "class-manager-2023": "Class Manager 2023"
       },
       "headingKeywords": {}
     },
@@ -170,7 +170,7 @@
       "src": "team/lwz19.md",
       "title": "Wen Zhong's Project Portfolio Page",
       "headings": {
-        "project-classmanager-2023": "Project: ClassManager-2023"
+        "project-class-manager-2023": "Project: Class Manager 2023"
       },
       "headingKeywords": {}
     },
