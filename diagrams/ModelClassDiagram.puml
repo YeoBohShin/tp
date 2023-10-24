@@ -12,8 +12,8 @@ Class AddressBook
 Class ModelManager
 Class UserPrefs
 
-Class UniquePersonList
-Class Person
+Class UniqueStudentList
+Class Student
 Class Address
 Class Email
 Class Name
