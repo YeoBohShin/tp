@@ -27,13 +27,13 @@ create TagCommand
 TagCommandParser -> TagCommand
 activate TagCommand
 
-TagCommand -> TagCommandParser
+TagCommand --> TagCommandParser
 deactivate TagCommand
 
-TagCommandParser -> AddressBookParser
+TagCommandParser --> AddressBookParser
 deactivate TagCommandParser
 
-AddressBookParser -> LogicManager : c
+AddressBookParser --> LogicManager : c
 deactivate AddressBookParser
 destroy TagCommandParser
 
@@ -44,14 +44,14 @@ create Student
 TagCommand -> Student
 activate Student
 
-Student -> TagCommand
+Student --> TagCommand
 deactivate Student
 
 TagCommand -> Model : setStudent(s)
 activate Model
 deactivate Model
 
-TagCommand -> LogicManager
+TagCommand --> LogicManager
 deactivate TagCommand
 
 [<--LogicManager
