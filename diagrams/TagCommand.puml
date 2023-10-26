@@ -1,0 +1,61 @@
+@startuml
+!include style.puml
+'https://plantuml.com/sequence-diagram
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
+participant "p:TagCommandParser" as TagCommandParser LOGIC_COLOR
+participant "c:TagCommand" as TagCommand LOGIC_COLOR
+participant "s:Student" as Student LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant ":Model" as Model MODEL_COLOR
+end box
+
+[-> LogicManager : execute("tag A0245234N t/teamleader")
+
+LogicManager -> AddressBookParser : parseCommand()
+activate AddressBookParser
+
+create TagCommandParser
+AddressBookParser -> TagCommandParser
+activate TagCommandParser
+
+create TagCommand
+TagCommandParser -> TagCommand
+activate TagCommand
+
+TagCommand -> TagCommandParser
+deactivate TagCommand
+
+TagCommandParser -> AddressBookParser
+deactivate TagCommandParser
+
+AddressBookParser -> LogicManager : c
+deactivate AddressBookParser
+destroy TagCommandParser
+
+LogicManager -> TagCommand : execute()
+activate TagCommand
+
+create Student
+TagCommand -> Student
+activate Student
+
+Student -> TagCommand
+deactivate Student
+
+TagCommand -> Model : setStudent(s)
+activate Model
+deactivate Model
+
+TagCommand -> LogicManager
+deactivate TagCommand
+
+[<--LogicManager
+deactivate LogicManager
+
+destroy TagCommand
+@enduml
