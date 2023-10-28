@@ -22,8 +22,8 @@ AttendanceTracker .up.|> Tracker
 AssignmentTracker .up.|> Tracker
 ClassParticipationTracker .up.|> Tracker
 
-Attendance --* AttendanceTracker
-Assignment --* AssignmentTracker
-ClassParticipation --* ClassParticipationTracker
+Attendance "*" <--* AttendanceTracker
+Assignment "*" <--* AssignmentTracker
+ClassParticipation "*" <--* ClassParticipationTracker
 
 @enduml
