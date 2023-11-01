@@ -122,11 +122,13 @@
         "adding-comment-to-a-student-comment": "Adding comment to a student : comment",
         "lookup-students-lookup": "Lookup students : lookup",
         "configuring-class-manager-config": "Configuring Class Manager: config",
-        "marking-tutorial-attendance-for-a-student-mark": "Marking tutorial attendance for a student : mark",
-        "marking-tutorial-attendance-for-all-students-displayed-markall": "Marking tutorial attendance for all students displayed : markall",
+        "marking-tutorial-attendance-for-a-student-as-present-mark-pre": "Marking tutorial attendance for a student as present : mark-pre",
+        "marking-tutorial-attendance-for-all-students-displayed-as-present-mark-pre-all": "Marking tutorial attendance for all students displayed as present : mark-pre-all",
+        "marking-tutorial-attendance-for-a-student-as-absent-mark-abs": "Marking tutorial attendance for a student as absent : mark-abs",
         "setting-assignment-grade-for-a-student-set-grade": "Setting assignment grade for a student : set-grade",
         "record-class-participation-for-a-student-record-part": "Record class participation for a student : record-part",
         "view-a-student-s-class-details-view": "View a student's class details: view",
+        "selecting-students-randomly-random": "Selecting students randomly: random",
         "deleting-a-student-delete": "Deleting a student : delete",
         "clearing-all-entries-clear": "Clearing all entries : clear",
         "exiting-the-program-exit": "Exiting the program : exit",
@@ -137,7 +139,8 @@
         "archiving-data-files-coming-in-v2-0": "Archiving data files [coming in v2.0]",
         "faq": "FAQ",
         "known-issues": "Known issues",
-        "command-summary": "Command summary"
+        "command-summary": "Command summary",
+        "glossary": "Glossary"
       },
       "headingKeywords": {}
     },
