@@ -12,7 +12,7 @@ Class AssignmentTracker
 Class ClassParticipationTracker
 }
 
-package ClassGrades as ClassGradesPackage {
+package ClassInformation as ClassGradesPackage {
 Class Attendance
 Class Assignment
 Class ClassParticipation
