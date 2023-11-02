@@ -8,6 +8,7 @@ Package Model as ModelPackage <<Rectangle>>{
 Class "<<interface>>\nReadOnlyClassManager" as ReadOnlyClassManager
 Class "<<interface>>\nReadOnlyUserPrefs" as ReadOnlyUserPrefs
 Class "<<interface>>\nModel" as Model
+Class VersionedClassManager
 Class ClassManager
 Class ModelManager
 Class UserPrefs
@@ -27,16 +28,19 @@ Class I #FFFFFF
 Class HiddenOutside #FFFFFF
 HiddenOutside ..> Model
 
-ClassManager .up.|> ReadOnlyClassManager
 
+ClassManager .up.|> ReadOnlyClassManager
+VersionedClassManager -|> ClassManager
+VersionedClassManager -> "*" ReadOnlyClassManager
+VersionedClassManager -[hidden]left-> ClassManager
 ModelManager .up.|> Model
 Model .right.> ReadOnlyUserPrefs
 Model .left.> ReadOnlyClassManager
-ModelManager -left-> "1" AddressBook
+ModelManager -left-> "1" VersionedClassManager
 ModelManager -right-> "1" UserPrefs
 UserPrefs .up.|> ReadOnlyUserPrefs
 
-AddressBook *--> "1" UniqueStudentList
+ClassManager *--> "1" UniqueStudentList
 UniqueStudentList --> "~* all" Student
 Student *--> Name
 Student *--> Phone
@@ -55,5 +59,5 @@ ClassDetails -[hidden]right-> StudentNumber
 Class HiddenClassDetails #FFFFFF
 ClassDetails ..> HiddenClassDetails
 
-ModelManager --> "~* filtered" Student
+ModelManager ---> "~* filtered" Student
 @enduml
