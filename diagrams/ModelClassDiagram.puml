@@ -21,6 +21,7 @@ Class Name
 Class Phone
 Class Tag
 Class StudentNumber
+Class Comment
 
 Class I #FFFFFF
 }
@@ -47,6 +48,7 @@ Student *--> Phone
 Student *--> Email
 Student *--> ClassDetails
 Student *--> StudentNumber
+Student *--> Comment
 Student *--> "*" Tag
 
 UniqueStudentList -[hidden]right-> I
@@ -55,6 +57,7 @@ Name -[hidden]right-> Phone
 Phone -[hidden]right-> Email
 Email -[hidden]right-> ClassDetails
 ClassDetails -[hidden]right-> StudentNumber
+StudentNumber -[hidden]right-> Comment
 
 Class HiddenClassDetails #FFFFFF
 ClassDetails ..> HiddenClassDetails
