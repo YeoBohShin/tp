@@ -52,11 +52,11 @@
         "common-classes": "Common classes",
         "implementation": "Implementation",
         "tag-feature": "Tag feature",
-        "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
+        "undo-redo-feature": "Undo/redo feature",
         "load-feature": "Load feature",
-        "present-feature": "Present feature",
         "config-feature": "Config feature",
         "class-details-feature": "Class Details feature",
+        "modify-class-details-features": "Modify Class Details features",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product scope",
@@ -67,7 +67,13 @@
         "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
         "launch-and-shutdown": "Launch and shutdown",
         "deleting-a-student": "Deleting a student",
-        "saving-data": "Saving data"
+        "loading-data-files": "Loading data files",
+        "undo-redo": "Undo/redo",
+        "launch-with-erroneous-data-files": "Launch with erroneous data files",
+        "adding-a-student": "Adding a student",
+        "editing-a-student": "Editing a student",
+        "adding-a-comment-to-a-student": "Adding a comment to a student",
+        "tagging-a-student": "Tagging a student"
       },
       "headingKeywords": {}
     },
@@ -199,7 +205,7 @@
     },
     {
       "src": "team/lwz19.md",
-      "title": "Wen Zhong's Project Portfolio Page",
+      "title": "Wenzhong's Project Portfolio Page",
       "headings": {
         "project-class-manager-2023": "Project: Class Manager 2023"
       },
@@ -214,6 +220,7 @@
         "code-contributed": "Code Contributed",
         "enhancements-implemented": "Enhancements Implemented",
         "contributions-to-the-ug": "Contributions to the UG",
+        "contributions-to-the-dg": "Contributions to the DG",
         "contributions-beyond-the-project": "Contributions beyond the Project"
       },
       "headingKeywords": {}
@@ -223,11 +230,7 @@
       "title": "Boh Shin's Project Portfolio Page",
       "headings": {
         "class-manager-2023": "Class Manager 2023",
-        "summary-of-contributions": "Summary of Contributions",
-        "code-contributed": "Code Contributed",
-        "enhancements-implemented": "Enhancements Implemented",
-        "contributions-to-the-ug": "Contributions to the UG",
-        "contributions-beyond-the-project": "Contributions beyond the Project"
+        "summary-of-contributions": "Summary of Contributions"
       },
       "headingKeywords": {}
     },

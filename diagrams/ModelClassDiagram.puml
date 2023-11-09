@@ -59,8 +59,5 @@ Email -[hidden]right-> ClassDetails
 ClassDetails -[hidden]right-> StudentNumber
 StudentNumber -[hidden]right-> Comment
 
-Class HiddenClassDetails #FFFFFF
-ClassDetails ..> HiddenClassDetails
-
 ModelManager ---> "~* filtered" Student
 @enduml
