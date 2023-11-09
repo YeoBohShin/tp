@@ -56,7 +56,7 @@
         "load-feature": "Load feature",
         "config-feature": "Config feature",
         "class-details-feature": "Class Details feature",
-        "modify-class-details-features": "Modify Class Details features",
+        "present-feature": "Present feature",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product scope",
@@ -73,7 +73,8 @@
         "adding-a-student": "Adding a student",
         "editing-a-student": "Editing a student",
         "adding-a-comment-to-a-student": "Adding a comment to a student",
-        "tagging-a-student": "Tagging a student"
+        "tagging-a-student": "Tagging a student",
+        "appendix-planned-enhancements": "Appendix: Planned Enhancements"
       },
       "headingKeywords": {}
     },
@@ -176,14 +177,9 @@
     },
     {
       "src": "team/changruhenryqian.md",
-      "title": "Changru's Project Portfolio Page",
+      "title": "Qian Changru's Project Portfolio Page",
       "headings": {
-        "class-manager-2023": "Class Manager 2023",
-        "summary-of-contributions": "Summary of Contributions",
-        "code-contributed": "Code Contributed",
-        "enhancements-implemented": "Enhancements Implemented",
-        "contributions-to-the-ug": "Contributions to the UG",
-        "contributions-beyond-the-project": "Contributions beyond the Project"
+        "project-class-manager-2023": "Project: Class Manager 2023"
       },
       "headingKeywords": {}
     },
@@ -216,8 +212,6 @@
       "title": "Ngee Yong's Project Portfolio Page",
       "headings": {
         "class-manager-2023": "Class Manager 2023",
-        "summary-of-contributions": "Summary of Contributions",
-        "code-contributed": "Code Contributed",
         "enhancements-implemented": "Enhancements Implemented",
         "contributions-to-the-ug": "Contributions to the UG",
         "contributions-to-the-dg": "Contributions to the DG",
@@ -229,8 +223,7 @@
       "src": "team/yeobohshin.md",
       "title": "Boh Shin's Project Portfolio Page",
       "headings": {
-        "class-manager-2023": "Class Manager 2023",
-        "summary-of-contributions": "Summary of Contributions"
+        "class-manager-2023": "Class Manager 2023"
       },
       "headingKeywords": {}
     },
