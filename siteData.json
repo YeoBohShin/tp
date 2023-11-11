@@ -74,6 +74,9 @@
         "editing-a-student": "Editing a student",
         "adding-a-comment-to-a-student": "Adding a comment to a student",
         "tagging-a-student": "Tagging a student",
+        "listing-students": "Listing students",
+        "display-help": "Display help",
+        "exiting-the-app": "Exiting the app",
         "appendix-planned-enhancements": "Appendix: Planned Enhancements"
       },
       "headingKeywords": {}
