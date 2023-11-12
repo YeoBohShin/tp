@@ -14,7 +14,7 @@ box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 end box
 
-[-> LogicManager : execute("tag A0245234N t/teamleader")
+[-> LogicManager : execute("tag s/A0245234N t/teamleader")
 
 LogicManager -> ClassManagerParser : parseCommand()
 activate ClassManagerParser

@@ -8,19 +8,31 @@ Participant ":Logic" as logic LOGIC_COLOR
 Participant ":Model" as model MODEL_COLOR
 Participant ":Storage" as storage STORAGE_COLOR
 
-user -[USER_COLOR]> ui : "load f/t2"
+user -[USER_COLOR]> ui : "config #t/13 #a/4"
 activate ui UI_COLOR
 
-ui -[UI_COLOR]> logic : execute("load f/t2")
+ui -[UI_COLOR]> logic : execute("config #t/13 #a/4")
 activate logic LOGIC_COLOR
 
-logic -[LOGIC_COLOR]> model : setClassManagerFilePath(filePath)
+logic -[LOGIC_COLOR]> model : setTutorialCount(tutorialCount)
 activate model MODEL_COLOR
 
 model -[MODEL_COLOR]-> logic
 deactivate model
 
-logic -[LOGIC_COLOR]> model : loadReset(newData)
+logic -[LOGIC_COLOR]> model : setAssignmentCount(assignmentCount)
+activate model MODEL_COLOR
+
+model -[MODEL_COLOR]-> logic
+deactivate model
+
+logic -[LOGIC_COLOR]> model : commitClassManager(newData)
+activate model MODEL_COLOR
+
+model -[MODEL_COLOR]-> logic
+deactivate model
+
+logic -[LOGIC_COLOR]> model : configReset(newData)
 activate model MODEL_COLOR
 
 model -[MODEL_COLOR]-> logic
@@ -47,7 +59,6 @@ deactivate storage
 
 storage --[STORAGE_COLOR]> logic
 deactivate storage
-
 
 logic --[LOGIC_COLOR]> ui
 deactivate logic

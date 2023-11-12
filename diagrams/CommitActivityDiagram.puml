@@ -8,11 +8,14 @@ start
 'Since the beta syntax does not support placing the condition outside the
 'diamond we place it as the true branch instead.
 
-if () then ([command commits ClassManager])
-    :Purge redundant states;
-    :Save ClassManager to
-    classManagerStateList;
-else ([else])
-endif
+if () then ([command does not modify Class Manager])
+    else ([else])
+    if () then ([command commits ClassManager])
+        :Purge redundant states;
+    else ([Load or Config command])
+        :Purge all previous states;
+    end if;
+    :Save ClassManager to classManagerStateList;
+end if;
 stop
 @enduml
