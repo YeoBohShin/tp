@@ -3,20 +3,21 @@
 'https://plantuml.com/sequence-diagram
 
 box Logic LOGIC_COLOR_T1
-participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":Logic" as Logic LOGIC_COLOR
 participant ":ClassManagerParser" as ClassManagerParser LOGIC_COLOR
 participant "p:TagCommandParser" as TagCommandParser LOGIC_COLOR
 participant "c:TagCommand" as TagCommand LOGIC_COLOR
 participant "s:Student" as Student LOGIC_COLOR
+participant "r:CommandResult" as CommandResult LOGIC_COLOR
 end box
 
 box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 end box
 
-[-> LogicManager : execute("tag s/A0245234N t/teamleader")
+[-> Logic : execute("tag s/A0245234N t/teamleader")
 
-LogicManager -> ClassManagerParser : parseCommand()
+Logic -> ClassManagerParser : parseCommand()
 activate ClassManagerParser
 
 create TagCommandParser
@@ -33,11 +34,11 @@ deactivate TagCommand
 TagCommandParser --> ClassManagerParser
 deactivate TagCommandParser
 
-ClassManagerParser --> LogicManager : c
+ClassManagerParser --> Logic : c
 deactivate ClassManagerParser
 destroy TagCommandParser
 
-LogicManager -> TagCommand : execute()
+Logic -> TagCommand : execute()
 activate TagCommand
 
 create Student
@@ -49,13 +50,22 @@ deactivate Student
 
 TagCommand -> Model : setStudent(s)
 activate Model
+
+Model --> TagCommand
 deactivate Model
 
-TagCommand --> LogicManager
+create CommandResult
+TagCommand -> CommandResult
+activate CommandResult
+
+CommandResult --> TagCommand
+deactivate CommandResult
+
+TagCommand --> Logic : r
 deactivate TagCommand
 
-[<--LogicManager
-deactivate LogicManager
+[<-- Logic
+deactivate Logic
 
 destroy TagCommand
 @enduml

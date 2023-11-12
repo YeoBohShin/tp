@@ -1,0 +1,64 @@
+@startuml
+!include style.puml
+'https://plantuml.com/sequence-diagram
+
+box Logic LOGIC_COLOR_T1
+participant ":Logic" as Logic LOGIC_COLOR
+participant ":ClassManagerParser" as ClassManagerParser LOGIC_COLOR
+participant "p:ViewCommandParser" as ViewCommandParser LOGIC_COLOR
+participant "v:ViewCommand" as ViewCommand LOGIC_COLOR
+participant "r:CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant ":Model" as Model MODEL_COLOR
+end box
+
+[-> Logic : execute("view s/A0245234A")
+activate Logic
+
+Logic -> ClassManagerParser : parseCommand()
+activate ClassManagerParser
+
+create ViewCommandParser
+ClassManagerParser -> ViewCommandParser
+activate ViewCommandParser
+
+create ViewCommand
+ViewCommandParser -> ViewCommand
+activate ViewCommand
+
+ViewCommand --> ViewCommandParser
+deactivate ViewCommand
+
+ViewCommandParser --> ClassManagerParser
+deactivate ViewCommandParser
+
+ClassManagerParser --> Logic : v
+deactivate ClassManagerParser
+destroy ViewCommandParser
+
+Logic -> ViewCommand : execute()
+activate ViewCommand
+
+ViewCommand -> Model : setSelectedStudent()
+activate Model
+
+Model --> ViewCommand
+deactivate Model
+
+create CommandResult
+ViewCommand -> CommandResult
+activate CommandResult
+
+CommandResult --> ViewCommand
+deactivate CommandResult
+
+ViewCommand --> Logic : r
+deactivate ViewCommand
+
+[<-- Logic
+deactivate Logic
+
+destroy ViewCommand
+@enduml

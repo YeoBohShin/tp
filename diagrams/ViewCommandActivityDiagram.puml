@@ -1,0 +1,19 @@
+@startuml
+start
+:Users executes a view command;
+
+if () then ([invalid command format])
+    : shows invalid command format message;
+else ([else])
+    if () then ([invalid student number])
+        : show invalid student number message;
+    else ([else])
+        if () then ([student not in Class Manager])
+            : show student does not exist message;
+        else ([else])
+            : sets the student to be viewed;
+        endif
+    endif
+endif
+stop
+@enduml
