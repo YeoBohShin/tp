@@ -53,8 +53,8 @@ HelpWindow --|> UiPart
 ClassDetailCard --|> UiPart
 ClassDetailBox --|> UiPart
 
-StudentCard ..> Model
-ClassDetailCard ..> Model
+StudentCard .right.> Model
+ClassDetailCard .right.> Model
 UiManager -right-> Logic
 MainWindow -left-> Logic
 

@@ -55,7 +55,10 @@
         "undo-redo-feature": "Undo/redo feature",
         "load-feature": "Load feature",
         "config-feature": "Config feature",
+        "lookup-feature": "Lookup feature",
+        "theme-feature": "Theme feature",
         "class-details-feature": "Class Details feature",
+        "data-visualisation-feature": "Data visualisation feature",
         "present-feature": "Present feature",
         "view-feature": "View feature",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
@@ -78,6 +81,8 @@
         "adding-a-comment-to-a-student": "Adding a comment to a student",
         "tagging-a-student": "Tagging a student",
         "viewing-a-student": "Viewing a student",
+        "lookup-students": "Lookup students",
+        "toggling-color-theme": "Toggling color theme",
         "listing-students": "Listing students",
         "display-help": "Display help",
         "exiting-the-app": "Exiting the app",
@@ -154,17 +159,17 @@
         "student-list-commands": "Student list commands",
         "add-a-student-add": "Add a student : add",
         "comment-on-a-student-comment": "Comment on a student : comment",
-        "delete-all-students-clear": "Delete all students : clear",
         "delete-one-student-delete": "Delete one student : delete",
+        "delete-all-students-clear": "Delete all students : clear",
         "edit-a-student-s-details-edit": "Edit a student's details : edit",
         "list-all-students-list": "List all students : list",
         "lookup-students-lookup": "Lookup students : lookup",
         "tag-a-student-tag": "Tag a student : tag",
         "class-information-commands": "Class information commands",
-        "mark-a-student-as-absent-absent": "Mark a student as absent : absent",
         "mark-a-student-as-present-present": "Mark a student as present : present",
-        "mark-all-displayed-students-as-absent-absent-all": "Mark all displayed students as absent : absent-all",
+        "mark-a-student-as-absent-absent": "Mark a student as absent : absent",
         "mark-all-displayed-students-as-present-present-all": "Mark all displayed students as present : present-all",
+        "mark-all-displayed-students-as-absent-absent-all": "Mark all displayed students as absent : absent-all",
         "record-class-participation-for-a-student-class-part": "Record class participation for a student : class-part",
         "set-assignment-grade-for-a-student-grade": "Set assignment grade for a student : grade",
         "view-a-student-s-class-information-view": "View a student's class information : view",
@@ -199,14 +204,6 @@
       "title": "Kieron's Project Portfolio Page",
       "headings": {
         "class-manager-2023": "Class Manager 2023"
-      },
-      "headingKeywords": {}
-    },
-    {
-      "src": "team/johndoe.md",
-      "title": "John Doe's Project Portfolio Page",
-      "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
       },
       "headingKeywords": {}
     },

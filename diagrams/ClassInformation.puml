@@ -12,11 +12,15 @@ Class AssignmentTracker
 Class ClassParticipationTracker
 }
 
-package ClassInformation as ClassGradesPackage {
+package ClassInformation\n as ClassGradesPackage {
 Class Attendance
 Class Assignment
 Class ClassParticipation
 }
+
+Attendance -[hidden]up-> AttendanceTracker
+Assignment -[hidden]up-> AssignmentTracker
+ClassParticipation -[hidden]up-> ClassParticipationTracker
 
 AttendanceTracker .up.|> Tracker
 AssignmentTracker .up.|> Tracker

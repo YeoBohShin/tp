@@ -24,6 +24,12 @@ create ViewCommandParser
 ClassManagerParser -> ViewCommandParser
 activate ViewCommandParser
 
+ViewCommandParser --> ClassManagerParser
+deactivate ViewCommandParser
+
+ClassManagerParser -> ViewCommandParser : parse("s/A0245234A")
+activate ViewCommandParser
+
 create ViewCommand
 ViewCommandParser -> ViewCommand
 activate ViewCommand

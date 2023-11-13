@@ -1,0 +1,84 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+skinparam ParticipantPadding 0
+skinparam DefaultFontSize 20
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":ClassManagerParser" as ClassManagerParser LOGIC_COLOR
+participant ":LookupCommandParser" as LookupCommandParser LOGIC_COLOR
+participant "l:LookupCommand" as LookupCommand LOGIC_COLOR
+participant ":CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant "pred:StudentContainsKeywordsPredicate" as StudentContainsKeywordsPredicate MODEL_COLOR
+participant ":Model" as Model MODEL_COLOR
+end box
+
+[-> LogicManager : execute("lookup c/T11")
+activate LogicManager
+
+LogicManager -> ClassManagerParser : parseCommand("lookup c/T11")
+activate ClassManagerParser
+
+create LookupCommandParser
+ClassManagerParser -> LookupCommandParser
+activate LookupCommandParser
+
+LookupCommandParser --> ClassManagerParser
+deactivate LookupCommandParser
+
+ClassManagerParser -> LookupCommandParser : parse("c/T11")
+activate LookupCommandParser
+
+create StudentContainsKeywordsPredicate
+LookupCommandParser -> StudentContainsKeywordsPredicate
+activate StudentContainsKeywordsPredicate
+
+StudentContainsKeywordsPredicate --> LookupCommandParser : pred
+deactivate StudentContainsKeywordsPredicate
+|||
+|||
+create LookupCommand
+LookupCommandParser -> LookupCommand
+activate LookupCommand
+
+LookupCommand --> LookupCommandParser : l
+deactivate LookupCommand
+
+LookupCommandParser --> ClassManagerParser : l
+deactivate LookupCommandParser
+
+ClassManagerParser --> LogicManager : l
+deactivate ClassManagerParser
+destroy LookupCommandParser
+
+LogicManager -> LookupCommand : execute()
+activate LookupCommand
+
+LookupCommand -> Model : updateFilteredStudentList(pred)
+activate Model
+|||
+|||
+Model --> LookupCommand
+deactivate Model
+|||
+|||
+create CommandResult
+LookupCommand -> CommandResult
+destroy StudentContainsKeywordsPredicate
+activate CommandResult
+
+CommandResult --> LookupCommand
+deactivate CommandResult
+
+LookupCommand --> LogicManager : result
+deactivate LookupCommand
+
+[<--LogicManager
+deactivate LogicManager
+
+destroy LookupCommand
+@enduml
