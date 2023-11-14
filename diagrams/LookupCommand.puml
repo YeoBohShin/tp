@@ -13,14 +13,14 @@ participant ":CommandResult" as CommandResult LOGIC_COLOR
 end box
 
 box Model MODEL_COLOR_T1
-participant "pred:StudentContainsKeywordsPredicate" as StudentContainsKeywordsPredicate MODEL_COLOR
+participant "pred:SCKP" as StudentContainsKeywordsPredicate MODEL_COLOR
 participant ":Model" as Model MODEL_COLOR
 end box
 
 [-> LogicManager : execute("lookup c/T11")
 activate LogicManager
 
-LogicManager -> ClassManagerParser : parseCommand("lookup c/T11")
+LogicManager -> ClassManagerParser : parseCommand()
 activate ClassManagerParser
 
 create LookupCommandParser

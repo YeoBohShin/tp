@@ -9,7 +9,6 @@ participant ":Logic" as Logic LOGIC_COLOR
 participant ":ClassManagerParser" as ClassManagerParser LOGIC_COLOR
 participant "p:TagCommandParser" as TagCommandParser LOGIC_COLOR
 participant "c:TagCommand" as TagCommand LOGIC_COLOR
-participant "s:Student" as Student LOGIC_COLOR
 participant "r:CommandResult" as CommandResult LOGIC_COLOR
 end box
 
@@ -17,7 +16,7 @@ box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 end box
 
-[-> Logic : execute("tag s/A0245234N t/teamleader")
+[-> Logic : execute("tag s/A0245234N\n t/teamleader")
 
 Logic -> ClassManagerParser : parseCommand()
 activate ClassManagerParser
@@ -29,7 +28,7 @@ activate TagCommandParser
 TagCommandParser --> ClassManagerParser
 deactivate TagCommandParser
 
-ClassManagerParser -> TagCommandParser : parse("s/A0245234N t/teamleader")
+ClassManagerParser -> TagCommandParser : parse("s/A0245234N\n t/teamleader")
 activate TagCommandParser
 
 create TagCommand
@@ -49,14 +48,7 @@ destroy TagCommandParser
 Logic -> TagCommand : execute()
 activate TagCommand
 
-create Student
-TagCommand -> Student
-activate Student
-
-Student --> TagCommand
-deactivate Student
-
-TagCommand -> Model : setStudent(s)
+TagCommand -> Model : setStudent()
 activate Model
 
 Model --> TagCommand
