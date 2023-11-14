@@ -1,4 +1,6 @@
 @startuml
+scale 768 width
+scale 768 height
 !include style.puml
 'https://plantuml.com/sequence-diagram
 

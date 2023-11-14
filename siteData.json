@@ -143,6 +143,7 @@
         "features": "Features",
         "class-number": "Class Number",
         "student-number": "Student Number",
+        "name": "Name",
         "data-visualisation": "Data visualisation",
         "command-navigation": "Command navigation",
         "saving-your-data": "Saving your data",
