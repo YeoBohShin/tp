@@ -41,6 +41,7 @@
       "title": "Developer Guide",
       "headings": {
         "class-manager-2023-developer-guide": "Class Manager 2023 Developer Guide",
+        "table-of-contents": "Table of Contents",
         "acknowledgements": "Acknowledgements",
         "setting-up-getting-started": "Setting up, getting started",
         "design": "Design",
@@ -135,7 +136,6 @@
       "headings": {
         "class-manager-2023-user-guide": "Class Manager 2023 User Guide",
         "welcome-to-class-manager-2023": "Welcome to Class Manager 2023!",
-        "table-of-contents": "Table of Contents",
         "overview": "Overview",
         "how-to-use-our-user-guide": "How to use our User Guide",
         "quick-start": "Quick start",
